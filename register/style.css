@@ -1,0 +1,126 @@
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --very-light-pink: #c7c7c7;
+    --text-input-field: #f7f7f7;
+    --hospital-green: #ACD9B2;
+    --sm: 14px;
+    --md: 20px;
+    --lg: 30px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.login {
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    padding: 10% 0 0 0;
+    display: grid;
+    place-items: center;
+}
+
+.form-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 300px;
+}
+
+.list-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 300px;
+    border-top: var(--very-light-pink) 1px dashed;
+}
+
+.logo {
+    width: 50px;
+    margin-bottom: 1px;
+    justify-self: center;
+}
+
+.title {
+    font-size: var(--lg);
+    margin: 1px;
+    text-align: center;
+}
+
+.subtitle {
+    color: var(--hospital-green);
+    font-size: var(--sm);
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: var(--sm);
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.input {
+    background-color: var(--text-input-field);
+    border: 1px solid var(--hospital-green);
+    border-radius: 8px;
+    height: 30px;
+    font-size: var(--sm);
+    padding: 6px;
+    margin-bottom: 12px;
+}
+
+.primary-button {
+    border-radius: 8px;
+    border: none;
+    color: var(--white);
+    width: 100%;
+    cursor: pointer;
+    font-size: var(--sm);
+    font-weight: bold;
+    height: 50px;
+    margin-bottom: 12px;
+}
+
+.register-button {
+    background-color: rgb(86, 215, 142);
+}
+
+.input-privilege {
+    padding: 6px;
+}
+
+
+input::placeholder{
+    font-size: var(--sm);
+    color: var(--very-light-pink);
+}
+
+.list-container p {
+    font-size: var(--md);
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    margin: 5px;
+    padding: 10px 0 0 0;
+}
+
+.list-container h3 {
+    font-size: var(--md);
+    text-align: center;
+    color: rgb(51, 195, 51);
+    font-weight: bold;
+    margin: 5px;
+    padding: 10px 0 0 0;
+}
+
