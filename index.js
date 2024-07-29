@@ -1,12 +1,20 @@
 let users = [
-    ['user1', 'admin', 'microondas123'],
-    ['user2', 'noc1', 'gilat123']
+    {
+        username: 'admin',
+        password: 'microondas123',
+        tipo: 'administrador'
+    },
+    {
+        username: 'noc1',
+        password: 'gilat123',
+        tipo: 'lector'
+    }
 ]
 
 
-function elementExists(element, pos) {
+function elementExists(user, pass) {
     for (let i = 0; i < users.length; i++) {
-        if (element === users[i][pos]) {
+        if (user === users[i].username && pass === users[i].password) {
             return true
         }
         
@@ -14,33 +22,34 @@ function elementExists(element, pos) {
     return false
 }
 
+function addText(type, text) {
+    const div = document.getElementById("list-container");
+    const t = document.createElement(type);
+    const lastChild = div.lastChild;
+    div.removeChild(lastChild)
+    t.textContent = text;
+    div.appendChild(t)
+}
+
 
 // shows the books we added in the box 
 function loginToUser(e){
     e.preventDefault();
     const userName = document.querySelector("#username").value;
-    let existElementUsername = elementExists(userName, 1);
 
     const password = document.querySelector("#password").value;
-    let existElementPassword = elementExists(password, 2);
+    const existElement = elementExists(userName, password);
+    console.log(userName, password)
 
     if (userName != "" && password != "") {
-        if (existElementUsername == true && existElementPassword == true) {
+        if (existElement) {
 
-
-            const div = document.getElementById("list-container");
-            const h3 = document.createElement("h3");
-            const lastChild = div.lastChild;
-            div.removeChild(lastChild)
-            h3.textContent = "Successful login";
-            div.appendChild(h3)
+            addText("h3", "Successful login")
+            
         } else {
-            const div = document.getElementById("list-container");
-            const p = document.createElement("p");
-            const lastChild = div.lastChild;
-            div.removeChild(lastChild)
-            p.textContent = "Login failed";
-            div.appendChild(p)
+
+            addText("p", "Login failed")
+            
         }
     } else {
         alert("You have not entered the requested values.")
